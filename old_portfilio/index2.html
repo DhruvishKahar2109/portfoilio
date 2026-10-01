@@ -1,0 +1,884 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dhruvish Kahar Portfolio</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Outfit:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Manrope:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* SCROLLBAR */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0f172a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, #38bdf8, #06b6d4);
+        border-radius: 10px;
+      }
+      /* FORCE ALL TEXT WHITE */
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      span,
+      small,
+      a {
+        color: #ffffff !important;
+      }
+
+      /* Paragraph soft white */
+      p {
+        color: #cbd5f5 !important;
+      }
+
+      /* Small text (company etc) */
+      small {
+        color: #a5b4fc !important;
+      }
+
+      /* Links */
+      a {
+        color: #cbd5f5 !important;
+      }
+
+      a:hover {
+        color: #38bdf8 !important;
+      }
+
+      /* Buttons text fix */
+      button {
+        color: #fff !important;
+      }
+
+      /* Bootstrap override */
+      .card,
+      .card * {
+        color: #fff !important;
+      }
+
+      /* Skills tag */
+      .skill-tag {
+        color: #fff !important;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #0f172a, #071848, #241bd1);
+        color: #fff;
+      }
+
+      #particles-js {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+
+      .content {
+        padding-left: 20vw;
+        padding-right: 20vw;
+      }
+
+      /* NAVBAR */
+      .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        backdrop-filter: blur(10px);
+        background: rgba(0, 0, 0, 0.4);
+        padding-left: 20vw;
+        padding-right: 20vw;
+      }
+
+      .navbar-nav {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
+      .navbar a {
+        color: #cbd5f5 !important;
+      }
+      .navbar a:hover {
+        color: #38bdf8 !important;
+      }
+
+      /* HERO */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+      }
+
+      .gradient-text {
+        background: linear-gradient(45deg, #38bdf8, #06b6d4, #6366f1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .hero p {
+        font-family: "Outfit", sans-serif;
+        font-size: 16px;
+        line-height: 1.8;
+        color: #cbd5f5;
+        max-width: 520px;
+      }
+
+      .hero p::first-line {
+        color: #e0f2fe;
+        font-weight: 500;
+      }
+
+      .hero p::before {
+        content: "";
+        position: absolute;
+        left: -15px;
+        top: 5px;
+        width: 3px;
+        height: 90%;
+        background: linear-gradient(#38bdf8, transparent);
+      }
+
+      #typing-text {
+        border-right: 2px solid #38bdf8;
+        padding-right: 5px;
+        animation: blink 0.7s infinite;
+      }
+
+      @keyframes blink {
+        50% {
+          border-color: transparent;
+        }
+      }
+
+      .btn-main {
+        background: linear-gradient(45deg, #3b82f6, #06b6d4);
+        border: none;
+        padding: 12px 25px;
+        border-radius: 30px;
+        box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+        transition: 0.3s;
+      }
+
+      .btn-main:hover {
+        transform: scale(1.08);
+        box-shadow: 0 0 30px rgba(56, 189, 248, 0.9);
+      }
+
+      .btn-outline {
+        border: 1px solid #38bdf8;
+        border-radius: 30px;
+        padding: 12px 25px;
+      }
+
+      /* IMAGE */
+      .profile-rect {
+        width: 100%;
+        max-width: 350px;
+        max-height: 420px;
+        border-radius: 20px;
+        overflow: hidden;
+        animation: float 4s ease-in-out infinite;
+      }
+
+      .profile-rect img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      /* DECOR */
+      .decor {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        z-index: -1;
+      }
+      .decor-1 {
+        width: 180px;
+        height: 180px;
+        background: #38bdf8;
+        top: -40px;
+        left: 40px;
+      }
+      .decor-2 {
+        width: 200px;
+        height: 200px;
+        background: #06b6d4;
+        bottom: -50px;
+        right: -20px;
+      }
+
+      .section {
+        padding: 80px 0;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        padding: 20px;
+        backdrop-filter: blur(10px);
+        transition: 0.3s;
+      }
+      .card:hover {
+        transform: translateY(-10px) scale(1.02);
+      }
+
+      .skill-tag {
+        display: inline-block;
+        margin: 5px;
+        padding: 6px 12px;
+        background: linear-gradient(135deg, #0f172a, #071848, #241bd1);
+        border-radius: 20px;
+      }
+
+      #scrollTopBtn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: linear-gradient(135deg, #0f172a, #071848, #241bd1);
+        border: none;
+        color: white;
+        padding: 12px 16px;
+        border-radius: 50%;
+        display: none;
+      }
+
+      /* TIMELINE LINE */
+      .timeline {
+        position: relative;
+        margin-top: 50px;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        width: 2px;
+        height: 100%;
+        background: #38bdf8;
+      }
+
+      /* ITEM */
+      .timeline-item {
+        position: relative;
+        width: 50%;
+        padding: 20px 40px;
+      }
+
+      /* LEFT */
+      .timeline-item.left {
+        left: 0;
+        text-align: right;
+      }
+
+      /* RIGHT */
+      .timeline-item.right {
+        left: 50%;
+      }
+
+      /* YEAR BADGE */
+      .timeline-year {
+        position: absolute;
+        top: 20px;
+        background: linear-gradient(45deg, #3b82f6, #06b6d4);
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      /* LEFT YEAR */
+      .timeline-item.left .timeline-year {
+        right: -70px;
+      }
+
+      /* RIGHT YEAR */
+      .timeline-item.right .timeline-year {
+        left: -70px;
+      }
+
+      /* DOT */
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        top: 25px;
+        width: 12px;
+        height: 12px;
+        background: #38bdf8;
+        border-radius: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .timeline-item:hover .card {
+        transform: scale(1.03);
+        box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
+      }
+      /* EXPERIENCE CARD */
+      .timeline .card {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        padding: 25px;
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: 0.4s ease;
+        font-family: "Manrope", sans-serif;
+      }
+
+      /* Hover effect */
+      .timeline .card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
+      }
+
+      /* Title */
+      .timeline .card h5 {
+        font-weight: 600;
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+
+      /* Company */
+      .timeline .card small {
+        color: #a5b4fc;
+        font-size: 13px;
+      }
+
+      /* Description */
+      .timeline .card p {
+        font-family: "Outfit", sans-serif;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #cbd5f5;
+        margin-top: 10px;
+      }
+      .footer {
+        background: linear-gradient(135deg, #020617, #0f172a);
+        padding: 60px 20px 30px;
+        margin-top: 80px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      /* LOGO */
+      .footer-logo {
+        font-family: "Manrope", sans-serif;
+        font-weight: 700;
+        font-size: 22px;
+        color: #fff;
+        margin-bottom: 20px;
+      }
+
+      .footer-logo span {
+        color: #38bdf8;
+      }
+
+      /* LINKS */
+      .footer-links {
+        margin-bottom: 25px;
+      }
+
+      .footer-links a {
+        margin: 0 15px;
+        color: #cbd5f5;
+        text-decoration: none;
+        font-size: 14px;
+        transition: 0.3s;
+      }
+
+      .footer-links a:hover {
+        color: #38bdf8;
+      }
+
+      /* SOCIAL */
+      .footer-social a {
+        margin: 0 10px;
+        font-size: 18px;
+        color: #cbd5f5;
+        transition: 0.3s;
+      }
+
+      .footer-social a:hover {
+        color: #38bdf8;
+        transform: translateY(-3px);
+      }
+
+      /* COPYRIGHT */
+      .footer-copy {
+        margin-top: 25px;
+        font-size: 13px;
+        color: #94a3b8;
+      }
+
+      .contact-section {
+        margin-top: 120px;
+        position: relative;
+        padding-top: 120px;
+        background: linear-gradient(135deg, #0f172a, #071848, #090374);
+        z-index: 1;
+      }
+      .curve-top {
+        position: absolute;
+        top: -120px;
+        left: 0;
+        width: 100%;
+        z-index: -1; /* MOST IMPORTANT */
+      }
+
+      /* CARD */
+      .contact-card {
+        max-width: 420px;
+        margin: auto;
+        padding: 30px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 40px rgba(56, 189, 248, 0.2);
+        text-align: center;
+      }
+
+      /* TITLE */
+      .contact-card h4 {
+        margin-bottom: 20px;
+        font-family: "Manrope", sans-serif;
+      }
+
+      /* INPUT */
+      .input-group {
+        margin-bottom: 15px;
+      }
+
+      .input-group input,
+      .input-group textarea {
+        width: 100%;
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.05);
+        color: #fff;
+        outline: none;
+        transition: 0.3s;
+      }
+
+      /* FOCUS EFFECT */
+      .input-group input:focus,
+      .input-group textarea:focus {
+        border-color: #38bdf8;
+        box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+      }
+
+      /* BUTTON */
+      .btn-send {
+        width: 100%;
+        padding: 12px;
+        border-radius: 30px;
+        border: none;
+        background: linear-gradient(45deg, #25d366, #16a34a);
+        color: #fff;
+        font-weight: 500;
+        margin-top: 10px;
+        transition: 0.3s;
+      }
+
+      .btn-send:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
+      }
+      .project-card {
+        border-radius: 20px;
+        padding: 15px;
+        transition: 0.3s;
+        font-family: "Outfit", sans-serif;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .project-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+      }
+
+      .project-img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 15px;
+        margin-bottom: 10px;
+      }
+      @media (max-width: 992px) {
+        .content {
+          padding: 15px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="particles-js"></div>
+
+    <!-- <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand text-white fw-bold" href="#">&lt;Dhruvish /&gt;</a>
+      <ul class="navbar-nav ms-auto">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav> -->
+
+    <nav class="navbar custom-navbar">
+      <!-- CENTER LOGO -->
+      <div class="logo-center" id="logoToggle">
+        &lt;<span>Dhruvish</span>/&gt;
+      </div>
+
+      <!-- RIGHT MENU -->
+      <div class="nav-menu" id="navMenu">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+    <div class="content">
+      <section id="about" class="hero container">
+        <div class="row align-items-center align-items-stretch">
+          <div class="col-md-6">
+            <h1>Hi, I'm <span class="gradient-text">Dhruvish Kahar</span></h1>
+            <h4>I am a <span id="typing-text"></span></h4>
+            <p>
+              Results-driven Laravel Developer with 5+ years of experience in
+              scalable apps, APIs, CRM systems and payment integrations.
+            </p>
+            <button class="btn btn-main me-2">Download CV</button>
+            <button class="btn btn-outline">Contact</button>
+          </div>
+
+          <div class="col-md-6 d-flex justify-content-end position-relative">
+            <div class="decor decor-1"></div>
+            <div class="profile-rect">
+              <img src="your-photo.jpg" />
+            </div>
+            <div class="decor decor-2"></div>
+          </div>
+        </div>
+      </section>
+      <section id="skills" class="section container text-center">
+        <h2>Skills</h2>
+        <div class="row mt-5">
+          <div class="col-md-3">
+            <div class="card">
+              <h5>Frontend</h5>
+              <span class="skill-tag">HTML</span
+              ><span class="skill-tag">CSS</span>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <h5>Backend</h5>
+              <span class="skill-tag">PHP</span
+              ><span class="skill-tag">Laravel</span>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <h5>Database</h5>
+              <span class="skill-tag">MySQL</span>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <h5>Tools</h5>
+              <span class="skill-tag">Git</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- EXPERIENCE SECTION -->
+      <section id="experience" class="section container">
+        <h2 class="text-center mb-4">Experience</h2>
+        <p class="text-center mb-5" style="color: #cbd5f5">
+          My professional journey & work experience
+        </p>
+
+        <div class="timeline">
+          <!-- LATEST -->
+          <div class="timeline-item right">
+            <div class="timeline-year">2024 - 2025</div>
+            <div class="card">
+              <h5>Laravel Developer</h5>
+              <small>Transcloud Solutions</small>
+              <p>Scalable apps, APIs & DB optimization.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item left">
+            <div class="timeline-year">2024</div>
+            <div class="card">
+              <h5>Laravel Developer</h5>
+              <small>Tricode Agency</small>
+              <p>CRM, Razorpay & ICICI integration.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item right">
+            <div class="timeline-year">2022 - 2024</div>
+            <div class="card">
+              <h5>Junior Laravel Developer</h5>
+              <small>Webbrains Technologies</small>
+              <p>Built APIs, e-commerce & authentication systems.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item left">
+            <div class="timeline-year">2021 - 2022</div>
+            <div class="card">
+              <h5>Laravel Developer</h5>
+              <small>TYMK Group Pvt Ltd</small>
+              <p>Worked on product-based apps & automation tools.</p>
+            </div>
+          </div>
+
+          <!-- OLDEST -->
+          <div class="timeline-item right">
+            <div class="timeline-year">2020 - 2021</div>
+            <div class="card">
+              <h5>PHP Developer (Training)</h5>
+              <small>Consumer Sketch Pvt Ltd</small>
+              <p>Learned Laravel & assisted backend development.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section container">
+        <h2 class="text-center mb-4">Projects</h2>
+        <p class="text-center mb-5" style="color: #cbd5f5">
+          Some of my featured work & real-world applications
+        </p>
+
+        <div class="row g-4">
+          <!-- Project 1 -->
+          <div class="col-md-4">
+            <div class="project-card card h-100">
+              <img
+                src="https://via.placeholder.com/400x200"
+                class="project-img"
+              />
+              <h5>Online Exam System</h5>
+              <p>
+                Secure government exam platform with authentication, SBI payment
+                integration, and hall ticket generation with barcode.
+              </p>
+              <a
+                href="https://ccc.vnsgu.ac.in"
+                target="_blank"
+                class="btn btn-sm btn-main mt-auto"
+              >
+                Live Project
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="col-md-4">
+            <div class="project-card card h-100">
+              <img
+                src="https://via.placeholder.com/400x200"
+                class="project-img"
+              />
+              <h5>E-commerce Platform</h5>
+              <p>
+                Full shopping system with cart, Razorpay integration, and
+                Shiprocket API for delivery.
+              </p>
+              <a href="#" class="btn btn-sm btn-main mt-auto">View</a>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="col-md-4">
+            <div class="project-card card h-100">
+              <img
+                src="https://via.placeholder.com/400x200"
+                class="project-img"
+              />
+              <h5>CRM & Donation System</h5>
+              <p>
+                Donation platform with ICICI & Razorpay integration, plus admin
+                dashboard and reports.
+              </p>
+              <a href="#" class="btn btn-sm btn-main mt-auto">View</a>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="col-md-4">
+            <div class="project-card card h-100">
+              <img
+                src="https://via.placeholder.com/400x200"
+                class="project-img"
+              />
+              <h5>Kingmaker API</h5>
+              <p>
+                REST APIs for Android & iOS apps with authentication,
+                performance optimization.
+              </p>
+              <a href="#" class="btn btn-sm btn-main mt-auto">View</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="section text-center">
+        <div class="curve-top">
+          <svg viewBox="0 0 1440 320">
+            <path
+              fill="#0f172a"
+              fill-opacity="1"
+              d="M0,192L60,186.7C120,181,240,171,360,144C480,117,600,75,720,80C840,85,960,139,1080,149.3C1200,160,1320,128,1380,112L1440,96L1440,0L0,0Z"
+            ></path>
+          </svg>
+        </div>
+        <h2>Contact</h2>
+        <div class="contact-card">
+          <h4>Connect With Me 🚀</h4>
+
+          <div class="input-group">
+            <input type="text" placeholder="Your Name" />
+          </div>
+
+          <div class="input-group">
+            <input type="email" placeholder="Your Email" />
+          </div>
+
+          <div class="input-group">
+            <input type="text" placeholder="Subject" />
+          </div>
+
+          <div class="input-group">
+            <textarea rows="4" placeholder="Message"></textarea>
+          </div>
+
+          <button class="btn-send">
+            <i class="fab fa-whatsapp"></i> Send Message
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <button id="scrollTopBtn">↑</button>
+    <footer class="footer">
+      <div class="footer-content text-center">
+        <!-- LOGO -->
+        <h3 class="footer-logo">&lt;<span>Dhruvish</span>/&gt;</h3>
+
+        <!-- NAV LINKS -->
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <!-- SOCIAL ICONS -->
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+
+        <!-- COPYRIGHT -->
+        <p class="footer-copy">© 2026 Dhruvish Kahar. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      const texts = [
+        "Laravel Developer",
+        "Full Stack Developer",
+        "API Specialist",
+      ];
+      let i = 0,
+        j = 0,
+        isDeleting = false;
+      function type() {
+        let current = texts[i];
+        if (!isDeleting) {
+          document.getElementById("typing-text").innerHTML = current.substring(
+            0,
+            j++,
+          );
+          if (j > current.length) {
+            isDeleting = true;
+            setTimeout(type, 1000);
+            return;
+          }
+        } else {
+          document.getElementById("typing-text").innerHTML = current.substring(
+            0,
+            j--,
+          );
+          if (j < 0) {
+            isDeleting = false;
+            i = (i + 1) % texts.length;
+          }
+        }
+        setTimeout(type, isDeleting ? 50 : 100);
+      }
+      type();
+
+      const btn = document.getElementById("scrollTopBtn");
+      window.onscroll = () =>
+        (btn.style.display =
+          document.documentElement.scrollTop > 200 ? "block" : "none");
+      btn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script>
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 100 },
+          size: { value: 3 },
+          move: { speed: 2 },
+          line_linked: { enable: true },
+          color: { value: "#38bdf8" },
+        },
+      });
+    </script>
+  </body>
+</html>
